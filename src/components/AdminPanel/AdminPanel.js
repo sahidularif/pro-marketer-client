@@ -63,15 +63,12 @@ const AdminPanel = () => {
         axios.post('https://api.imgbb.com/1/upload',
             imageData)
             .then(function (response) {
-                // console.log(response)
-                // setIMageURL(response.data.data.display_url);
                 newImage.imageURL = response.data.data.display_url;
                 setProductData(newImage);
             })
             .catch(function (error) {
                 console.log(error);
             });
-
     }
 
     return (
@@ -80,11 +77,11 @@ const AdminPanel = () => {
             <Container>
                 <Row>
                     <Col md={3} className="sidebar">
-                        <h4>BIOXIN CHOSMETICS</h4>
-                        <ul>
-                            <Link><li> <FontAwesomeIcon icon={faTh} /> Manage Product</li></Link>
-                            <Link><li> <FontAwesomeIcon icon={faPlus} /> Add Product</li></Link>
-                            <Link><li> <FontAwesomeIcon icon={faEdit} /> Edit Product</li></Link>
+                        <h4 style={{color:'white', marginBottom:'20px'}}>BIOXIN CHOSMETICS</h4>
+                        <ul style={{listStyleType:'none'}}>
+                            <Link to="/manageProducts" style={{color:'white'}}><li> <FontAwesomeIcon icon={faTh} /> Manage Product</li></Link>
+                            <Link to="/adminPanel" style={{color:'white'}}><li> <FontAwesomeIcon icon={faPlus} /> Add Product</li></Link>
+                            <Link style={{color:'white'}}><li> <FontAwesomeIcon icon={faEdit} /> Edit Product</li></Link>
                         </ul>
                     </Col>
                     <Col md={9}>

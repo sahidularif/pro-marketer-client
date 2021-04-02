@@ -1,4 +1,3 @@
-
 import './App.css';
 import {
   BrowserRouter as Router, Switch, Route
@@ -12,11 +11,11 @@ import Orders from './components/Orders/Orders';
 import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import ManageProducts from './components/AdminPanel/ManageProducts';
 export const UserContext = createContext();
 
-
+//==================================================================
 function App() {
-
 
   const [loggedInUser, SetLoggedInUser] = useState({});
 
@@ -25,22 +24,25 @@ function App() {
     <UserContext.Provider value={[loggedInUser, SetLoggedInUser]}>
       <Router>
         <Switch>
+          <Route exact path="/home">
+            <Home />
+          </Route>
           <Route path="/adminPanel">
             <AdminPanel></AdminPanel>
           </Route>
-          <Route  path="/deals">
+          <Route path="/deals">
             <Deals></Deals>
           </Route >
-          <Route  path="/admin">
-            
+          <Route path="/manageProducts">
+            <ManageProducts />
           </Route >
-          <PrivateRoute  path="/orders">
+          <PrivateRoute path="/orders">
             <Orders />
           </PrivateRoute >
           <Route path="/login">
             <Login />
           </Route>
-          <PrivateRoute  path="/checkout/:_id">
+          <PrivateRoute path="/checkout/:_id">
             <CheckOut />
           </PrivateRoute >
           <Route exact path="/">

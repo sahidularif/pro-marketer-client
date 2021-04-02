@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackspace } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'react-bootstrap';
+import { UserContext } from '../../App';
 
 //======================================================================
 
 const Order = (props) => {
-
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { name, price, imageURL, quantity, orderDate, _id } = props.orders;
     console.log(_id);
     // Delete order when user click on delete and call handleDeleteUpdate
@@ -21,14 +22,14 @@ const Order = (props) => {
     };
 
 
-
     return (
         <tr style={{ justifyContent: 'center' }}>
             <td style={{ width: '20%' }}><img src={imageURL} style={{ width: '100%' }} alt="pd image" /></td>
-            <td style={{ width: '35%' }}>{name}</td>
+            <td style={{ width: '30%' }}>{name}</td>
             <td>{price}</td>
             <td>{quantity}</td>
             <td>{orderDate}</td>
+            <td>{loggedInUser.email}</td>
             <td style={{ fontSize: '30px' }}>
                 {/* <FontAwesomeIcon onClick={handleDelteOrder} style={{ cursor: 'pointer' }} icon={faBackspace} /> */}
                 <Button onClick={handleDelteOrder}>Delete</Button>

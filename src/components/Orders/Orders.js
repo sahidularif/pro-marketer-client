@@ -13,8 +13,6 @@ const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [userOrders, setUserOrders] = useState([]);
     const userEmail = userOrders[0]?.userEmail;
-    console.log(userEmail)
-    console.log(userOrders);
     const totalPayment = userOrders.reduce((sum, product) => sum + product.price * product.quantity, 0);
     const totalQty = userOrders.reduce((sum, product) => sum + product.quantity * product.quantity, 0);
 
@@ -59,6 +57,7 @@ const Orders = () => {
                                 <th>Unit Price</th>
                                 <th>Quantity</th>
                                 <th>Order Date</th>
+                                <th>Order Email</th>
                                 <th>Action</th>
                                
                             </tr>
@@ -69,10 +68,10 @@ const Orders = () => {
                         }
                             <tr>
                                 <td colspan="2">Total</td>
-                                <td>${totalQty}.00</td>
-                                <td>{totalPayment}</td>
-                                <td colspan="2"></td>
-                                
+                                <td>${totalPayment}.00</td>
+                                <td>{totalQty}</td>
+                                <td ></td>
+                                <td colSpan="2"></td>                             
 
                             </tr>
 
@@ -81,7 +80,6 @@ const Orders = () => {
                     </Table>
                     <div className="float-right"><Button onClick={handleAddOrder}>Proceed Order</Button></div>
                 </div>
-
 
             </div>
         </div>

@@ -8,7 +8,7 @@ const Product = (props) => {
     const { name, weight, price, imageURL, _id } = props.product;
 
     return (
-        <Card  className="mb-3" style={{ width: '22rem',height: '23rem' }}>
+        <Card  className="mb-3" style={{ width: '22rem',height: '25rem' }}>
             <Card.Img variant="top" src={imageURL} />
             <Card.Body>
                 <Card.Title className="text-center" style={{fontSize:'16px'}}>{name}-{weight}</Card.Title>                
