@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
-import image from '../../images/images.jpg';
 import './Products.css';
 
 
@@ -9,16 +8,16 @@ const Products = () => {
 
     useEffect(() => {
         fetch('http://localhost:5500/products')
-        .then(res => res.json())
-        .then(data => setProducts(data))
+            .then(res => res.json())
+            .then(data => setProducts(data))
     }, [])
     return (
         <div className="container">
-           <div className="card">
-           {
-                products.map(pd=><Product product={pd}></Product>)
-            }
-           </div>
+            <div className="card">
+                {
+                    products.map(pd => <Product product={pd}></Product>)
+                }
+            </div>
         </div>
     );
 };
