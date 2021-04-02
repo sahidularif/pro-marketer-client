@@ -11,7 +11,7 @@ const Products = () => {
     const [preLoaderVisibility, setPreLoaderVisibility] = useState("block");
 
     useEffect(() => {
-        fetch('http://localhost:5500/products')
+        fetch('https://blooming-hamlet-96823.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

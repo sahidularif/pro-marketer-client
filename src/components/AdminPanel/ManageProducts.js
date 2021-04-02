@@ -21,7 +21,7 @@ const ManageProducts = () => {
       });
   }, [products]);
   const handleDeleteProduct = (_id) => {
-    fetch(`http://localhost:5500/deleteProduct/${_id}`, {
+    fetch(`https://blooming-hamlet-96823.herokuapp.com/deleteProduct/${_id}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())

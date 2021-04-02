@@ -40,7 +40,7 @@ const AdminPanel = () => {
             imageURL: productData.imageURL
         };
         console.log(newProduct.name, newProduct.price, newProduct.weight, productData.imageURL);
-        const url = `http://localhost:5500/addProduct`;
+        const url = `https://blooming-hamlet-96823.herokuapp.com/addProduct`;
 
         fetch(url, {
             method: 'POST',
@@ -60,7 +60,7 @@ const AdminPanel = () => {
         imageData.set('key', 'a50bd9e146ea263516d08f905253b815');
         imageData.append('image', event.target.files[0]);
 
-        axios.post('https://api.imgbb.com/1/upload',
+        axios.post('https://blooming-hamlet-96823.herokuapp.com/upload',
             imageData)
             .then(function (response) {
                 newImage.imageURL = response.data.data.display_url;

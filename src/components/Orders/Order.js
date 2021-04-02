@@ -14,7 +14,7 @@ const Order = (props) => {
     const handleDelteOrder = () => {
         console.log(_id);
         console.log('delte')
-        fetch(`http://localhost:5500/deleteOrder/${_id}`, {
+        fetch(`https://blooming-hamlet-96823.herokuapp.com/deleteOrder/${_id}`, {
             method: 'DELETE',
         })
             .then((res) => res.json())

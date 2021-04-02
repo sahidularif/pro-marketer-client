@@ -27,7 +27,7 @@ const CheckOut = () => {
         const newOrder = { ...product, quantity, orderDate, userEmail };
         console.log(newOrder)
 
-        fetch('http://localhost:5500/addOrder', {
+        fetch('https://blooming-hamlet-96823.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newOrder),

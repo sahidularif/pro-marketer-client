@@ -20,7 +20,7 @@ const Orders = () => {
     // Dynamically filter loggedInUser data from API:
     useEffect(() => {
         fetch(
-            'http://localhost:5500/userOrders?email=' +
+            'https://blooming-hamlet-96823.herokuapp.com/userOrders?email=' +
             loggedInUser.email,
             {
                 method: 'GET',
